@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>Gulp SVG Symbols test page</title>
+    <meta name="description" content=""/>
+    <meta name="viewport" content="width=device-width"/>
+    <style type="text/css">
+      html {
+        font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+        background: #ecf4f8;
+        text-align: center;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        margin: 0 0 1em;
+        padding: 1em;
+        background: white;
+      }
+      main {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      main::after {
+        content: '';
+        flex-grow: 100;
+      }
+      p {
+        margin: 0;
+        padding: 0 0 .5em;
+      }
+      .icon,
+      .icon-wrapper {
+        background: white;
+        margin: .5em;
+        padding: 1em;
+        border-radius: .5em;
+      }
+      .icon {
+        display: inline-block;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        padding-bottom: 0;
+        min-width: 8em;
+      }
+      .icon-wrapper {
+        background-color: #fafafa;
+        background-image: linear-gradient(45deg, #ccc 25%, transparent 25%, transparent 75%, #ccc 75%, #ccc),
+        linear-gradient(45deg, #ccc 25%, transparent 25%, transparent 75%, #ccc 75%, #ccc);
+        background-size:30px 30px;
+        background-position:0 0, 15px 15px;
+        margin: auto;
+      }
+      .icon-action {
+        margin: 1em -1em 0;
+        border-top: 1px solid #eee;
+        display: flex;
+      }
+      .icon-action > * {
+        flex-grow: 1;
+      }
+
+      button {
+        font: inherit;
+        background: none;
+        border: 0;
+        outline: 0;
+      }
+      button,
+      label {
+        padding: 1em .5em;
+        flex-basis: 50%;
+        cursor: pointer;
+      }
+      button:hover,
+      label:hover {
+        color: mediumVioletRed;
+      }
+      label {
+        border-left: 1px solid #eee;
+      }
+      input[type=checkbox] {
+        display: none;
+      }
+      /* can't display none: copy won't work */
+      pre {
+        text-align: left;
+        position: absolute;
+        opacity: 0;
+        z-index: 2;
+        padding: 1em;
+        pointer-events: none;
+        border-top: 1px solid #eee;
+        margin: 0 -1em;
+        width: 0;
+      }
+      input:checked ~ .icon-action label {
+        background: #eee;
+      }
+      input:checked ~ pre {
+        position: static;
+        pointer-events: auto;
+        opacity: 1;
+        width: 100%;
+      }
+    </style>
+    <style type="text/css">
+      .icon-close {
+        width: 1em;
+        height: 1em;
+      }
+      
+      .icon-instagram {
+        width: 1em;
+        height: 1em;
+      }
+      
+      .icon-logo-close {
+        width: 0.53em;
+        height: 1em;
+      }
+      
+      .icon-logo-open {
+        width: 0.53em;
+        height: 1em;
+      }
+      
+      .icon-logo {
+        width: 1.93em;
+        height: 1em;
+      }
+      
+      .icon-menu {
+        width: 1em;
+        height: 1em;
+      }
+      
+      .icon-twitter {
+        width: 1em;
+        height: 1em;
+      }
+      
+      
+    </style>
+  </head>
+  <body>
+    <svg xmlns="http://www.w3.org/2000/svg" style="width: 0; height: 0; visibility: hidden; position: absolute; overflow: hidden;">
+    <defs>
+      false
+    </defs>
+    
+    <symbol id="icon-close" viewBox="0 0 100 100">
+      <title>close</title><path d="M11.11 18.18l7.07-7.07 70.712 70.71-7.072 7.07z"/><path d="M11.11 81.82l70.71-70.71 7.072 7.07L18.18 88.89z"/>
+    </symbol>
+    <symbol id="icon-instagram" viewBox="0 0 100 100">
+      <title>instagram</title><path d="M50 8.67c13.47 0 15.07.06 20.36.3a27.63 27.63 0 0 1 9.35 1.73 15.59 15.59 0 0 1 5.79 3.76 15.8 15.8 0 0 1 3.78 5.79 27.74 27.74 0 0 1 1.73 9.35c.24 5.32.3 6.91.3 20.36s-.06 15.07-.3 20.36a27.63 27.63 0 0 1-1.73 9.35 15.59 15.59 0 0 1-3.76 5.79 15.8 15.8 0 0 1-5.79 3.78A27.74 27.74 0 0 1 70.41 91c-5.32.24-6.91.3-20.36.3S35 91.23 29.69 91a27.63 27.63 0 0 1-9.35-1.73 15.59 15.59 0 0 1-5.79-3.76 15.8 15.8 0 0 1-3.78-5.79A27.74 27.74 0 0 1 9 70.35C8.79 65 8.73 63.44 8.73 50s.06-15.07.3-20.36a27.63 27.63 0 0 1 1.73-9.35 15.59 15.59 0 0 1 3.76-5.79 15.8 15.8 0 0 1 5.79-3.78A27.74 27.74 0 0 1 29.67 9C35 8.73 36.56 8.67 50 8.67zm0-9.08c-13.69 0-15.4.06-20.78.3A36.84 36.84 0 0 0 17 2.23a24.61 24.61 0 0 0-8.92 5.83A24.7 24.7 0 0 0 2.25 17 37 37 0 0 0-.09 29.21c-.24 5.4-.3 7.11-.3 20.8s.06 15.4.3 20.78A36.84 36.84 0 0 0 2.25 83a24.61 24.61 0 0 0 5.83 9A24.64 24.64 0 0 0 17 97.77a37 37 0 0 0 12.23 2.34c5.38.24 7.09.3 20.78.3s15.4-.06 20.78-.3A36.84 36.84 0 0 0 83 97.77 25.76 25.76 0 0 0 97.75 83a37 37 0 0 0 2.34-12.23c.24-5.38.3-7.09.3-20.78s-.06-15.4-.3-20.78A36.84 36.84 0 0 0 97.75 17a23.61 23.61 0 0 0-5.77-9 24.64 24.64 0 0 0-8.92-5.81A37 37 0 0 0 70.83-.09C65.43-.35 63.72-.41 50-.41z"/><path d="M50 24.11A25.9 25.9 0 1 0 75.93 50 25.9 25.9 0 0 0 50 24.11zm0 42.7A16.8 16.8 0 1 1 66.83 50 16.8 16.8 0 0 1 50 66.81zM83 23.09a6 6 0 1 1-6-6 6 6 0 0 1 6 6z"/>
+    </symbol>
+    <symbol id="icon-logo-close" viewBox="0 0 53.14 100">
+      <title>logo-close</title><path d="M0 100v-6.29h46.85V6.29H0V0h53.14v100H0z"/>
+    </symbol>
+    <symbol id="icon-logo-open" viewBox="0 0 53.14 100">
+      <title>logo-open</title><path d="M0 100V0h53.14v6.29H6.29v87.42h46.85V100H0z"/>
+    </symbol>
+    <symbol id="icon-logo" viewBox="0 0 193.71 100">
+      <title>logo</title><path d="M93.71 77.01V51.1H70.02v-6.29h23.69V22.99H100v21.82h23.64v6.29H100v25.91h-6.29zM0 100V0h53.14v6.29H6.29v87.42h46.85V100H0zM140.57 100v-6.29h46.85V6.29h-46.85V0h53.14v100h-53.14z"/>
+    </symbol>
+    <symbol id="icon-menu" viewBox="0 0 100 100">
+      <title>menu</title><path d="M0 13.75h100v10H0zM0 45h100v10H0zM0 76.25h100v10H0z"/>
+    </symbol>
+    <symbol id="icon-twitter" viewBox="0 0 100 100">
+      <title>twitter</title><path d="M100 19a40.45 40.45 0 0 1-11.78 3.22 20.63 20.63 0 0 0 9-11.35 41.25 41.25 0 0 1-13 5 20.54 20.54 0 0 0-35 18.71A58.22 58.22 0 0 1 7 13.11a20.54 20.54 0 0 0 6.35 27.38A20.53 20.53 0 0 1 4 37.93v.25A20.51 20.51 0 0 0 20.5 58.3a20.55 20.55 0 0 1-5.41.72 21.1 21.1 0 0 1-3.87-.37 20.58 20.58 0 0 0 19.16 14.26A41.14 41.14 0 0 1 4.9 81.69 40.78 40.78 0 0 1 0 81.4a58 58 0 0 0 31.46 9.22c37.73 0 58.37-31.26 58.37-58.37 0-.9 0-1.78-.06-2.66A41.29 41.29 0 0 0 100 19z"/>
+    </symbol></svg>
+    <h1>Gulp SVG Symbols demo page</h1>
+    <main>
+      <div class="icon">
+        <p>#icon-close</p>
+        <div class="icon-wrapper">
+          <svg role="img" class="icon-close" style="position: absolute; width: 0; height: 0; overflow: hidden;">
+            <use xlink:href="#icon-close"/>
+          </svg>
+        </div>
+        <div class="icon-dev">
+          <input class="show-code" id="toggle-icon-close" type="checkbox"/>
+          <div class="icon-action">
+            <button onclick="gulpSvgSymbol.copy(&apos;code-icon-close&apos;)">Copy</button>
+            <label onclick="gulpSvgSymbol.reflow(&apos;code-icon-close&apos;)" for="toggle-icon-close">Show</label>
+          </div>
+<pre>
+<code id="code-icon-close">&lt;svg role=&quot;img&quot; class=&quot;icon-close&quot;&gt;
+  &lt;use xlink:href=&quot;#icon-close&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;</code>
+</pre>
+        </div>
+      </div>
+      <div class="icon">
+        <p>#icon-instagram</p>
+        <div class="icon-wrapper">
+          <svg role="img" class="icon-instagram" style="position: absolute; width: 0; height: 0; overflow: hidden;">
+            <use xlink:href="#icon-instagram"/>
+          </svg>
+        </div>
+        <div class="icon-dev">
+          <input class="show-code" id="toggle-icon-instagram" type="checkbox"/>
+          <div class="icon-action">
+            <button onclick="gulpSvgSymbol.copy(&apos;code-icon-instagram&apos;)">Copy</button>
+            <label onclick="gulpSvgSymbol.reflow(&apos;code-icon-instagram&apos;)" for="toggle-icon-instagram">Show</label>
+          </div>
+<pre>
+<code id="code-icon-instagram">&lt;svg role=&quot;img&quot; class=&quot;icon-instagram&quot;&gt;
+  &lt;use xlink:href=&quot;#icon-instagram&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;</code>
+</pre>
+        </div>
+      </div>
+      <div class="icon">
+        <p>#icon-logo-close</p>
+        <div class="icon-wrapper">
+          <svg role="img" class="icon-logo-close" style="position: absolute; width: 0; height: 0; overflow: hidden;">
+            <use xlink:href="#icon-logo-close"/>
+          </svg>
+        </div>
+        <div class="icon-dev">
+          <input class="show-code" id="toggle-icon-logo-close" type="checkbox"/>
+          <div class="icon-action">
+            <button onclick="gulpSvgSymbol.copy(&apos;code-icon-logo-close&apos;)">Copy</button>
+            <label onclick="gulpSvgSymbol.reflow(&apos;code-icon-logo-close&apos;)" for="toggle-icon-logo-close">Show</label>
+          </div>
+<pre>
+<code id="code-icon-logo-close">&lt;svg role=&quot;img&quot; class=&quot;icon-logo-close&quot;&gt;
+  &lt;use xlink:href=&quot;#icon-logo-close&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;</code>
+</pre>
+        </div>
+      </div>
+      <div class="icon">
+        <p>#icon-logo-open</p>
+        <div class="icon-wrapper">
+          <svg role="img" class="icon-logo-open" style="position: absolute; width: 0; height: 0; overflow: hidden;">
+            <use xlink:href="#icon-logo-open"/>
+          </svg>
+        </div>
+        <div class="icon-dev">
+          <input class="show-code" id="toggle-icon-logo-open" type="checkbox"/>
+          <div class="icon-action">
+            <button onclick="gulpSvgSymbol.copy(&apos;code-icon-logo-open&apos;)">Copy</button>
+            <label onclick="gulpSvgSymbol.reflow(&apos;code-icon-logo-open&apos;)" for="toggle-icon-logo-open">Show</label>
+          </div>
+<pre>
+<code id="code-icon-logo-open">&lt;svg role=&quot;img&quot; class=&quot;icon-logo-open&quot;&gt;
+  &lt;use xlink:href=&quot;#icon-logo-open&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;</code>
+</pre>
+        </div>
+      </div>
+      <div class="icon">
+        <p>#icon-logo</p>
+        <div class="icon-wrapper">
+          <svg role="img" class="icon-logo" style="position: absolute; width: 0; height: 0; overflow: hidden;">
+            <use xlink:href="#icon-logo"/>
+          </svg>
+        </div>
+        <div class="icon-dev">
+          <input class="show-code" id="toggle-icon-logo" type="checkbox"/>
+          <div class="icon-action">
+            <button onclick="gulpSvgSymbol.copy(&apos;code-icon-logo&apos;)">Copy</button>
+            <label onclick="gulpSvgSymbol.reflow(&apos;code-icon-logo&apos;)" for="toggle-icon-logo">Show</label>
+          </div>
+<pre>
+<code id="code-icon-logo">&lt;svg role=&quot;img&quot; class=&quot;icon-logo&quot;&gt;
+  &lt;use xlink:href=&quot;#icon-logo&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;</code>
+</pre>
+        </div>
+      </div>
+      <div class="icon">
+        <p>#icon-menu</p>
+        <div class="icon-wrapper">
+          <svg role="img" class="icon-menu" style="position: absolute; width: 0; height: 0; overflow: hidden;">
+            <use xlink:href="#icon-menu"/>
+          </svg>
+        </div>
+        <div class="icon-dev">
+          <input class="show-code" id="toggle-icon-menu" type="checkbox"/>
+          <div class="icon-action">
+            <button onclick="gulpSvgSymbol.copy(&apos;code-icon-menu&apos;)">Copy</button>
+            <label onclick="gulpSvgSymbol.reflow(&apos;code-icon-menu&apos;)" for="toggle-icon-menu">Show</label>
+          </div>
+<pre>
+<code id="code-icon-menu">&lt;svg role=&quot;img&quot; class=&quot;icon-menu&quot;&gt;
+  &lt;use xlink:href=&quot;#icon-menu&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;</code>
+</pre>
+        </div>
+      </div>
+      <div class="icon">
+        <p>#icon-twitter</p>
+        <div class="icon-wrapper">
+          <svg role="img" class="icon-twitter" style="position: absolute; width: 0; height: 0; overflow: hidden;">
+            <use xlink:href="#icon-twitter"/>
+          </svg>
+        </div>
+        <div class="icon-dev">
+          <input class="show-code" id="toggle-icon-twitter" type="checkbox"/>
+          <div class="icon-action">
+            <button onclick="gulpSvgSymbol.copy(&apos;code-icon-twitter&apos;)">Copy</button>
+            <label onclick="gulpSvgSymbol.reflow(&apos;code-icon-twitter&apos;)" for="toggle-icon-twitter">Show</label>
+          </div>
+<pre>
+<code id="code-icon-twitter">&lt;svg role=&quot;img&quot; class=&quot;icon-twitter&quot;&gt;
+  &lt;use xlink:href=&quot;#icon-twitter&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;</code>
+</pre>
+        </div>
+      </div>
+    </main>
+    <script type="text/javascript">
+      (function () {
+        // https://developers.google.com/web/updates/2015/04/cut-and-copy-commands
+        var symb = window.gulpSvgSymbol = {};
+        var main = document.getElementsByTagName('main')[0];
+        symb.copy = function (id) {
+          window.getSelection().removeAllRanges();
+          var code = document.getElementById(id);
+          var range = document.createRange();
+          range.selectNode(code);
+          window.getSelection().addRange(range);
+          try {
+            var successful = document.execCommand('copy');
+            var msg = successful ? 'successful' : 'unsuccessful';
+          } catch(err) {
+            console.log('Oops, unable to copy');
+          }
+          window.getSelection().removeAllRanges();
+        }
+        // Force a reflow so sizes are back to initials…
+        symb.reflow = function (id) {
+          var code = document.getElementById(id);
+          code.style.display = 'none';
+          window.setTimeout(function () {
+            code.style.display = '';
+          }, 0);
+        }
+      }());
+    </script>
+  </body>
+</html>
